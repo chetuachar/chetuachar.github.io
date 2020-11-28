@@ -357,6 +357,13 @@ button {
     line-height: 30px;
     font-size: 16px;
 }
+.my-detail .my-resume-title a {
+    text-decoration: underline;
+    color:black;
+    font-weight: 200;
+    line-height: 40px;
+    font-size: 15px;
+}
 
 
 
@@ -1030,6 +1037,10 @@ blockquote {
     .my-detail .my-sub-title {
        font-size: 15px;
        line-height: 29px;
+    }
+    .my-detail .my-resume-title{
+        font-size: 10px;
+       line-height: 20px;
     }
 	
     .social-icon li a {
