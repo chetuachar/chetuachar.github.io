@@ -673,6 +673,9 @@ blockquote {
 .image-popup {
     cursor: cell;
 }
+.img-img{
+    padding: 8px;
+}
 
 
 
@@ -742,8 +745,6 @@ blockquote {
 
 /* You May Also Like */
 
-.you-may-also-like {
-}
 
 .you-may-also-like h3 {
     font-size: 25px;
@@ -768,8 +769,7 @@ blockquote {
 
 /* Comment */
 
-.comment {
-}
+
 
 .comment h3 {
     font-size: 25px;
@@ -950,7 +950,59 @@ blockquote {
    background-color: #00aff0;
 }
 
+/* Blog Post & Single Blog Page */
 
+div.blog-post {
+    display: none;
+    margin-bottom: 50px;
+}
+
+.blog-post .post-image img {
+    width: 100%;
+}
+
+.blog-post .post-image p {
+    text-align: center;
+    font-size: 14px;
+    margin-top: 10px;
+}
+
+.blog-post .post-image a {
+    font-weight: 600;
+}
+
+.blog-post .post-title h2 {
+    color: #333333;
+    font-size: 35px;
+    line-height: 45px;
+    font-weight: 700;
+    margin-top: 24px;
+}
+
+.blog-post .post-title h3 {
+    font-size: 25px;
+    line-height: 35px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+}
+
+.blog-post .post-info {
+    font-size: 14px;
+    line-height: 30px;
+    font-weight: 500;
+    padding-bottom: 15px;
+    padding: 10px 15px;
+    color: #8c8c8c;
+}
+
+.blog-post p {
+    font-size: 16px;
+    line-height: 30px;
+    color: #696868;
+    font-weight: 300;
+    letter-spacing: 0.8px;
+    font-family: "Poppins", sans-serif;
+}
 
 /* Syntax Highlighter */
 
@@ -961,7 +1013,39 @@ blockquote {
 .syntaxhighlighter .toolbar .item.printSource {
     display: none !important;
 }
+/* gallery filter */
+#filter-list {
+    display: inline-block;
+    border: 1px solid #dddddd;
+    border-radius: 30px;
+    padding: 4px;
+    margin: 0 0 25px;
+  }
 
+  #filter-list li {
+    display: inline-block;
+    font-size: 12px;
+    color: #888888;
+    text-transform: uppercase;
+    line-height: 50px;
+    text-align: center;
+    border-radius: 25px;
+    font-weight: 500;
+    padding: 0 15px;
+    min-width: 100px;
+    cursor: pointer;
+    -webkit-transition: all 0.3s ease-in-out;
+    -ms-transition: all 0.3s ease-in-out;
+    -moz-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+
+  }
+
+  #filter-list li.active,
+  #filter-list li:hover {
+    background-color: #53bff0;
+    color: #fff;
+  }
 
 
 /* Scroll To Top */
@@ -1096,6 +1180,9 @@ blockquote {
     .custom-pad-2 {
        padding-left: 15px;
     }
+    .img-img{
+        padding-bottom: 15px;
+    }
 }
 
 
@@ -1108,6 +1195,9 @@ blockquote {
     .subscribe-form .submit-btn {
        font-size: 13px;
        width: 90px;
+    }
+    .img-img{
+        padding-bottom: 15px;
     }
 }
 
@@ -1125,6 +1215,9 @@ blockquote {
        text-align: left;
        width: 100%;
      }
+     .img-img{
+        padding-bottom: 15px;
+    }
 }
 
 
@@ -1154,6 +1247,9 @@ blockquote {
        font-size: 18px;
        line-height: 28px;
        font-weight: 500;
+    }
+    .img-img{
+        padding-bottom: 15px;
     }
 
     .blog-post .post-info {
