@@ -2,6 +2,7 @@ import React from 'react';
 import { NavLink } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Menu, X } from 'lucide-react';
+import avatar from '../../assets/avatar.png';
 import './Navbar.css';
 
 const Navbar = () => {
@@ -18,7 +19,7 @@ const Navbar = () => {
     <nav className="navbar">
       <div className="container nav-content">
         <NavLink to="/" className="nav-logo">
-          <img src="/avatar.png" alt="Avatar" className="nav-avatar" />
+          <img src={avatar} alt="Avatar" className="nav-avatar" />
           <span className="text-gradient">Chethan N V</span>
         </NavLink>
 

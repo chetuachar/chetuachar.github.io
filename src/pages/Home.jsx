@@ -4,6 +4,8 @@ import { Download } from 'lucide-react';
 import PageLayout from '../layouts/PageLayout';
 import { siteConfig, skills } from '../data/config';
 import { Link } from 'react-router-dom';
+import avatar from '../assets/avatar.png';
+import resume from '../assets/CHETHAN_NV_Resume.pdf';
 import './Home.css';
 
 const Home = () => {
@@ -25,7 +27,7 @@ const Home = () => {
             
             <div className="hero-actions">
               <Link to="/projects" className="btn btn-primary">View Work</Link>
-              <a href={siteConfig.resumeUrl} className="btn btn-secondary" target="_blank" rel="noreferrer">
+              <a href={resume} className="btn btn-secondary" target="_blank" rel="noreferrer">
                 <Download size={18} /> Resume
               </a>
             </div>
@@ -38,7 +40,7 @@ const Home = () => {
             transition={{ duration: 0.6, delay: 0.2 }}
           >
             <div className="avatar-wrapper">
-              <img src="/avatar.png" alt={siteConfig.name} className="main-avatar" />
+              <img src={avatar} alt={siteConfig.name} className="main-avatar" />
               <div className="avatar-glow"></div>
             </div>
           </motion.div>
