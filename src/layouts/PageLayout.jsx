@@ -7,7 +7,7 @@ const pageVariants = {
   exit: { opacity: 0, y: -20, transition: { duration: 0.3, ease: 'easeIn' } }
 };
 
-const PageLayout = ({ children, title }) => {
+const PageLayout = ({ children, title, isWide }) => {
   React.useEffect(() => {
     if (title) {
       document.title = `${title} | Portfolio`;
@@ -20,7 +20,7 @@ const PageLayout = ({ children, title }) => {
       initial="initial"
       animate="animate"
       exit="exit"
-      className="container page-content"
+      className={`container page-content ${isWide ? 'wide-container' : ''}`}
       style={{ padding: '3rem 2rem' }}
     >
       {children}

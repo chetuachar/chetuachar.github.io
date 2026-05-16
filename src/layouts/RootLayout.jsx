@@ -3,6 +3,7 @@ import { Outlet } from 'react-router-dom';
 import Navbar from '../components/common/Navbar';
 import Footer from '../components/common/Footer';
 import FloatingThemeToggle from '../components/common/FloatingThemeToggle';
+import BackToTop from '../components/common/BackToTop';
 import { useThemeStore } from '../store/useThemeStore';
 
 const RootLayout = () => {
@@ -20,6 +21,7 @@ const RootLayout = () => {
         <Outlet />
       </main>
       <Footer />
+      <BackToTop />
       <FloatingThemeToggle />
     </div>
   );

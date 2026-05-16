@@ -7,13 +7,16 @@ import Projects from './pages/Projects';
 import Blog from './pages/Blog';
 import BlogDetail from './pages/BlogDetail';
 import Contact from './pages/Contact';
+import ScrollToTop from './components/common/ScrollToTop';
 
 function App() {
   const location = useLocation();
 
   return (
-    <Routes location={location} key={location.pathname}>
-      <Route path="/" element={<RootLayout />}>
+    <>
+      <ScrollToTop />
+      <Routes location={location} key={location.pathname}>
+        <Route path="/" element={<RootLayout />}>
         <Route index element={<Home />} />
         <Route path="projects" element={<Projects />} />
         <Route path="blog" element={<Blog />} />
@@ -21,6 +24,7 @@ function App() {
         <Route path="contact" element={<Contact />} />
       </Route>
     </Routes>
+    </>
   );
 }
 

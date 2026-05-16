@@ -1,0 +1,40 @@
+.back-to-top {
+  position: fixed;
+  bottom: 6.5rem; /* Positioned above the theme toggle */
+  right: 2rem;
+  z-index: 1000;
+  width: 3.5rem;
+  height: 3.5rem;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--glass);
+  backdrop-filter: blur(12px);
+  border: 1px solid var(--border);
+  color: var(--accent);
+  cursor: pointer;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15);
+  transition: all var(--transition-fast);
+}
+
+.back-to-top:hover {
+  border-color: var(--accent);
+  background: var(--bg-secondary);
+  box-shadow: 0 12px 48px rgba(0, 0, 0, 0.2);
+  color: var(--accent-hover);
+}
+
+@media (max-width: 640px) {
+  .back-to-top {
+    bottom: 5.5rem; /* Adjusted for smaller mobile toggle */
+    right: 1.5rem;
+    width: 3rem;
+    height: 3rem;
+  }
+  
+  .back-to-top svg {
+    width: 20px;
+    height: 20px;
+  }
+}
