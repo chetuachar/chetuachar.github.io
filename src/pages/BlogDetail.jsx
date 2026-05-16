@@ -1,10 +1,12 @@
 import React, { useEffect, useState } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import ReactMarkdown from 'react-markdown';
+import remarkGfm from 'remark-gfm';
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
 import { atomDark } from 'react-syntax-highlighter/dist/esm/styles/prism';
 import { ArrowLeft } from 'lucide-react';
 import PageLayout from '../layouts/PageLayout';
+import CodeBlock from '../components/common/CodeBlock';
 import { blogs } from '../data/content';
 import './BlogDetail.css';
 
@@ -30,7 +32,7 @@ const BlogDetail = () => {
           <div className="blog-meta">
             <time dateTime={blog.date}>{new Date(blog.date).toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' })}</time>
           </div>
-          <h1 className="blog-title">{blog.title}</h1>
+          <h1 className="blog-title text-gradient">{blog.title}</h1>
           <div className="blog-tags">
             {blog.tags.map(tag => (
               <span key={tag} className="tag">{tag}</span>
@@ -44,18 +46,17 @@ const BlogDetail = () => {
 
         <div className="markdown-content">
           <ReactMarkdown
+            remarkPlugins={[remarkGfm]}
             components={{
               code({node, inline, className, children, ...props}) {
                 const match = /language-(\w+)/.exec(className || '')
                 return !inline && match ? (
-                  <SyntaxHighlighter
-                    style={atomDark}
+                  <CodeBlock
                     language={match[1]}
-                    PreTag="div"
                     {...props}
                   >
-                    {String(children).replace(/\n$/, '')}
-                  </SyntaxHighlighter>
+                    {children}
+                  </CodeBlock>
                 ) : (
                   <code className={className} {...props}>
                     {children}

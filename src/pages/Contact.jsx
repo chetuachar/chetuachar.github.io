@@ -63,19 +63,19 @@ const Contact = () => {
     {
       icon: <Mail size={20} />,
       title: "Email",
-      value: "chethan.nv@example.com", // Replace with real email if needed
-      link: "mailto:chethan.nv@example.com"
+      value: "chethan.nv12@gmail.com",
+      link: "mailto:chethan.nv12@gmail.com"
     },
     {
       icon: <LinkedinIcon size={20} />,
       title: "LinkedIn",
-      value: "linkedin.com/in/chethannv",
+      value: "linkedin.com/in/chetuachar",
       link: siteConfig.socials.linkedin
     },
     {
       icon: <GithubIcon size={20} />,
       title: "GitHub",
-      value: "github.com/chethan.nv12",
+      value: "github.com/chetuachar",
       link: siteConfig.socials.github
     },
     {
@@ -88,7 +88,7 @@ const Contact = () => {
 
   return (
     <div className="contact-container container">
-      <motion.div 
+      <motion.div
         className="contact-header"
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
@@ -99,7 +99,7 @@ const Contact = () => {
       </motion.div>
 
       <div className="contact-grid">
-        <motion.div 
+        <motion.div
           className="contact-info"
           initial={{ opacity: 0, x: -30 }}
           animate={{ opacity: 1, x: 0 }}
@@ -126,7 +126,7 @@ const Contact = () => {
           ))}
         </motion.div>
 
-        <motion.div 
+        <motion.div
           className="contact-form-wrapper"
           initial={{ opacity: 0, x: 30 }}
           animate={{ opacity: 1, x: 0 }}
@@ -135,40 +135,40 @@ const Contact = () => {
           <form ref={formRef} onSubmit={handleSubmit} className="contact-form">
             <div className="form-group">
               <label htmlFor="user_name">Name</label>
-              <input 
-                type="text" 
-                id="user_name" 
-                name="user_name" 
-                required 
+              <input
+                type="text"
+                id="user_name"
+                name="user_name"
+                required
                 placeholder="Your Name"
               />
             </div>
-            
+
             <div className="form-group">
               <label htmlFor="user_email">Email</label>
-              <input 
-                type="email" 
-                id="user_email" 
-                name="user_email" 
-                required 
+              <input
+                type="email"
+                id="user_email"
+                name="user_email"
+                required
                 placeholder="your@email.com"
               />
             </div>
 
             <div className="form-group">
               <label htmlFor="message">Message</label>
-              <textarea 
-                id="message" 
-                name="message" 
-                rows="5" 
-                required 
+              <textarea
+                id="message"
+                name="message"
+                rows="5"
+                required
                 placeholder="How can I help you?"
               ></textarea>
             </div>
 
-            <button 
-              type="submit" 
-              className="submit-btn" 
+            <button
+              type="submit"
+              className="submit-btn"
               disabled={isSubmitting}
             >
               {isSubmitting ? (
@@ -181,7 +181,7 @@ const Contact = () => {
             </button>
 
             {status === 'success' && (
-              <motion.div 
+              <motion.div
                 className="status-message success"
                 initial={{ opacity: 0, scale: 0.9 }}
                 animate={{ opacity: 1, scale: 1 }}
@@ -191,7 +191,7 @@ const Contact = () => {
             )}
 
             {status === 'error' && (
-              <motion.div 
+              <motion.div
                 className="status-message error"
                 initial={{ opacity: 0, scale: 0.9 }}
                 animate={{ opacity: 1, scale: 1 }}
