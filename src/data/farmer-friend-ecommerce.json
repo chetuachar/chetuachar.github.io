@@ -1,0 +1,74 @@
+{
+  "subtitle": "E-Commerce platform for agricultural trade",
+  "description": "Full‑stack PHP/MySQL e‑commerce platform for agricultural trade, featuring Google Maps location pinning and OTP‑based SMS authentication for secure seller‑buyer communication.",
+  "techStack": {
+    "Backend": "PHP",
+    "Database": "MySQL",
+    "Frontend": "Bootstrap",
+    "Maps": "Google Maps API",
+    "Auth": "SMS OTP Gateway"
+  },
+  "architectureHighlights": [
+    {
+      "title": "Google Maps Integration",
+      "description": "Interactive map for pinpointing farm locations using Google Maps API."
+    },
+    {
+      "title": "OTP Authentication",
+      "description": "Secure login and transaction verification via SMS OTP gateway."
+    }
+  ],
+  "modularInfrastructure": [
+    {
+      "title": "Layered Architecture",
+      "description": "Separated concerns: presentation, business logic, data access."
+    }
+  ],
+  "endpoints": [
+    {
+      "category": "Product Management",
+      "routes": [
+        {
+          "method": "GET",
+          "path": "/products",
+          "description": "List all products"
+        }
+      ]
+    },
+    {
+      "category": "Order Processing",
+      "routes": [
+        {
+          "method": "POST",
+          "path": "/order",
+          "description": "Place a new order"
+        }
+      ]
+    }
+  ],
+  "gettingStarted": {
+    "prerequisites": ["PHP 8+", "MySQL", "Docker (optional)"],
+    "setupAndRun": [
+      {
+        "step": "Clone repo",
+        "command": "git clone https://github.com/yourrepo/farmer-friend-ecommerce.git && cd farmer-friend-ecommerce"
+      },
+      {
+        "step": "Install dependencies",
+        "command": "composer install"
+      },
+      {
+        "step": "Set up .env",
+        "description": "Copy .env.example and configure DB credentials and SMS gateway keys"
+      },
+      {
+        "step": "Run migrations",
+        "command": "php artisan migrate"
+      },
+      {
+        "step": "Start server",
+        "command": "php -S localhost:8000 -t public"
+      }
+    ]
+  }
+}

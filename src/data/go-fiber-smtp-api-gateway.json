@@ -1,0 +1,106 @@
+{
+  "title": "Go-Fiber SMTP API Gateway",
+  "subtitle": "High-performance SMTP API built with GoFiber",
+  "description": "A high-performance SMTP API Gateway that enables direct mail delivery to MX relay servers, bypassing traditional MTAs. Engineered custom SMTP communication using net/textproto and enmime, with soft‑retry mechanisms, real‑time connection monitoring, optional DKIM signing, and containerized deployment via Docker.",
+  "techStack": {
+    "framework": "GoFiber (Go web framework)",
+    "smtpLibrary": "net/textproto",
+    "mimeParser": "enmime",
+    "logging": "lumberjack (log rotation)",
+    "containerization": "Docker",
+    "dkim": "optional DKIM signing",
+    "rateLimiting": "built‑in IP rate limiting"
+  },
+  "modularInfrastructure": [
+    {
+      "title": "Layered Routing",
+      "description": "Separate routing layers for authentication, validation, and email dispatch to keep concerns isolated."
+    },
+    {
+      "title": "Middleware Stack",
+      "description": "Custom middlewares for rate limiting, logging, and DKIM signing are composed in a clear stack order."
+    }
+  ],
+  "architectureHighlights": [
+    {
+      "title": "Custom SMTP Communication",
+      "description": "Implemented low‑level SMTP commands using net/textproto, allowing granular handling of server responses and raw status codes."
+    },
+    {
+      "title": "Soft‑Retry & Monitoring",
+      "description": "Automatic retry logic with configurable attempts and delays, plus real‑time connection health monitoring for high deliverability."
+    },
+    {
+      "title": "DKIM Signing",
+      "description": "Optional DKIM signing of outgoing mail via configurable private key, improving inbox placement and protecting against spoofing."
+    }
+  ],
+  "gettingStarted": {
+    "prerequisites": [
+      "Go 1.25 or later",
+      "Docker (optional for container deployment)",
+      "An accessible SMTP server for testing"
+    ],
+    "setupAndRun": [
+      {
+        "step": "Clone the repository",
+        "command": "git clone https://github.com/chethan/GoFiber-SMTP-Server.git && cd GoFiber-SMTP-Server"
+      },
+      {
+        "step": "Install Go dependencies",
+        "command": "go mod tidy"
+      },
+      {
+        "step": "Configure environment variables (see .env.example)",
+        "description": "Set SERVER_PORT, AUTH_SECRET, LOG_*, MAIL_*, DKIM_*, etc."
+      },
+      {
+        "step": "Run the server locally",
+        "command": "go run ./cmd/app"
+      },
+      {
+        "step": "Or build and run via Docker",
+        "command": "docker build -t gofiber-smtp-server . && docker run -p 8080:8080 -e SERVER_PORT=8080 -e AUTH_SECRET=my-secret gofiber-smtp-server"
+      }
+    ]
+  },
+  "endpoints": [
+    {
+      "category": "Health Check",
+      "routes": [
+        {
+          "method": "GET",
+          "path": "/health",
+          "description": "Returns {\"status\":\"ok\"} if the service is running.",
+          "exampleResponse": {
+            "status": "ok"
+          }
+        }
+      ]
+    },
+    {
+      "category": "Email Operations",
+      "routes": [
+        {
+          "method": "POST",
+          "path": "/v1/send-email",
+          "description": "Send an email via the SMTP gateway. Requires Auth-Token header and JSON payload with to/from/subject/text_body/html_body.",
+          "queryParameters": {
+            "domain": "example.com"
+          },
+          "requestExample": {
+            "to": "user@example.com",
+            "from": "no-reply@mydomain.com",
+            "subject": "Test Email",
+            "text_body": "Hello world",
+            "html_body": "<p>Hello world</p>"
+          },
+          "responseExample": {
+            "messageId": "abc123",
+            "status": "queued"
+          }
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,37 @@
+{
+  "description": "A low-latency bidirectional WebSocket messaging platform built with Go-Fiber, featuring dynamic middleware for profanity filtering and PostgreSQL schema tracking.",
+  "techStack": {
+    "Backend": "Go (Fiber)",
+    "WebSocket": "gorilla/websocket",
+    "Database": "PostgreSQL",
+    "Migrations": "Goose",
+    "Container": "Docker"
+  },
+  "architectureHighlights": [
+    { "title": "Layered Architecture", "description": "Separated concerns into routing, middleware, and core messaging layers for maintainability." },
+    { "title": "Dynamic Middleware", "description": "Pluggable middleware for real-time profanity filtering and rate limiting." }
+  ],
+  "modularInfrastructure": [
+    { "title": "WebSocket Router", "description": "Handles connection upgrades and message broadcasting across rooms." },
+    { "title": "Database Layer", "description": "Encapsulates schema migrations and message persistence." }
+  ],
+  "endpoints": [
+    {
+      "category": "Health Check",
+      "routes": [ { "method": "GET", "path": "/health", "description": "Returns service health status." } ]
+    },
+    {
+      "category": "Messaging",
+      "routes": [ { "method": "GET", "path": "/ws", "description": "WebSocket upgrade endpoint for real-time chat." } ]
+    }
+  ],
+  "gettingStarted": {
+    "prerequisites": ["Go 1.20+", "Docker", "PostgreSQL"],
+    "setupAndRun": [
+      { "step": "Clone repository", "command": "git clone https://github.com/chethan/che-chat.git && cd che-chat" },
+      { "step": "Install dependencies", "command": "go mod tidy" },
+      { "step": "Start PostgreSQL", "command": "docker run -p 5432:5432 -e POSTGRES_PASSWORD=secret -e POSTGRES_DB=chatdb postgres:latest" },
+      { "step": "Run server", "command": "go run ./cmd/app" }
+    ]
+  }
+}

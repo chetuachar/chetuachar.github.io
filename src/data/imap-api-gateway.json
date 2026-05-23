@@ -1,0 +1,128 @@
+{
+  "title": "IMAP API Gateway",
+  "subtitle": "High-performance IMAP & SMTP REST API Service",
+  "description": "A high-performance REST API built in Go (Fiber) for interacting with IMAP and SMTP servers. It acts as an intermediary microservice, allowing clients to authenticate, manage domains, fetch directory trees, and interact with emails using a connection-pooled IMAP architecture.",
+  "techStack": {
+    "framework": "Fiber (Go web framework)",
+    "database": "PostgreSQL with pgx driver",
+    "migrations": "goose",
+    "cacheSessionStore": "Redis (go-redis/v9)",
+    "imapClient": "emersion/go-imap",
+    "security": "JWT & CSRF Tokens + HttpOnly Cookies"
+  },
+  "architectureHighlights": [
+    {
+      "title": "Global IMAP Manager",
+      "description": "Maintains an internal connection pool with a defined TTL and a connection limit. This ensures the app can handle multiple email clients efficiently without recreating IMAP connections on every request."
+    },
+    {
+      "title": "Session Auth",
+      "description": "Stores authenticated user sessions securely in Redis, combined with stateless cookies and X-CSRF-Token to prevent CSRF attacks."
+    },
+    {
+      "title": "Graceful Shutdown",
+      "description": "Intercepts SIGINT / SIGTERM for safely closing fiber server, PostgreSQL pool, and all cached IMAP connections in the pool."
+    }
+  ],
+  "gettingStarted": {
+    "prerequisites": [
+      "Go 1.25.3 or higher",
+      "PostgreSQL",
+      "Redis server"
+    ],
+    "setupAndRun": [
+      {
+        "step": "Clone the repository and install dependencies",
+        "command": "go mod tidy"
+      },
+      {
+        "step": "Database Configuration",
+        "description": "Ensure your PostgreSQL db and Redis are running. Set the relevant configurations in your config logic (often driven by environment variables or configuration files)."
+      },
+      {
+        "step": "Running the Application",
+        "command": "go run ./cmd/server/"
+      }
+    ]
+  },
+  "endpoints": [
+    {
+      "category": "Domain Configuration",
+      "security": "Secured via X-API-KEY",
+      "routes": [
+        {
+          "method": "GET",
+          "path": "/v1/domain/:domain",
+          "description": "Get domain details"
+        },
+        {
+          "method": "POST",
+          "path": "/v1/domain",
+          "description": "Create a domain configuration"
+        },
+        {
+          "method": "DELETE",
+          "path": "/v1/domain/:domain",
+          "description": "Delete a domain configuration"
+        }
+      ]
+    },
+    {
+      "category": "User & Authentication",
+      "routes": [
+        {
+          "method": "POST",
+          "path": "/v1/user/login",
+          "description": "Authenticates user. Returns SESSION_ID cookie & Set-Cookie headers."
+        },
+        {
+          "method": "GET",
+          "path": "/v1/user/validate",
+          "description": "Validates the active session."
+        },
+        {
+          "method": "POST",
+          "path": "/v1/user/logout",
+          "description": "Terminates the active session both locally and in Redis."
+        }
+      ]
+    },
+    {
+      "category": "Folder Operations",
+      "security": "Requires valid SESSION_ID cookie and X-CSRF-Token header",
+      "routes": [
+        {
+          "method": "GET",
+          "path": "/v1/folder/path",
+          "description": "Retrieves the folder paths/tree for the authenticated user."
+        }
+      ]
+    },
+    {
+      "category": "Email Operations",
+      "security": "Requires valid SESSION_ID cookie and X-CSRF-Token header",
+      "routes": [
+        {
+          "method": "GET",
+          "path": "/v1/email/fetchall",
+          "description": "Fetch paginated emails from a given folder (e.g., INBOX)."
+        },
+        {
+          "method": "GET",
+          "path": "/v1/email/fetchraw",
+          "description": "Fetch raw email details by UID."
+        }
+      ]
+    },
+    {
+      "category": "Health Check",
+      "routes": [
+        {
+          "method": "GET",
+          "path": "/health",
+          "description": "Checks API health (200 OK)."
+        }
+      ]
+    }
+  ]
+}

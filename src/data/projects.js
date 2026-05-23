@@ -2,37 +2,41 @@ export const projects = [
   {
     id: 1,
     title: "IMAP API Gateway",
-    description: "Architected a high-performance IMAP API using Go-Fiber and emersion/go-imap. Engineered Redis session caching to bridge frontend requests with backend IMAP servers effectively at scale.",
-    tech: ["Golang", "Go-Fiber", "Redis", "Docker", "Architecture"],
+    description: "A high-performance REST API and microservice built in Go (Fiber) for connection-pooled IMAP/SMTP server interaction, featuring Redis session caching, PostgreSQL storage, and secure JWT/CSRF cookie-based authentication.",
+    tech: ["Go (Fiber)", "Redis", "PostgreSQL", "emersion/go-imap", "Docker", "JWT / CSRF"],
     github: "https://github.com",
     live: "#",
-    image: "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=800&q=80"
+    image: "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=800&q=80",
+    detailsKey: "imap-api-gateway"
   },
   {
     id: 2,
-    title: "SMTP API Direct Delivery System",
-    description: "Developed an SMTP Gateway enabling direct delivery to MX relays, bypassing standard MTAs. Built custom SMTP communication logic via net/textproto resulting in granular status code handling and robust soft-retry mechanisms.",
-    tech: ["Golang", "net/textproto", "Microservices", "Docker"],
-    github: "https://github.com",
-    live: "#",
-    image: "https://images.unsplash.com/photo-1551808525-51a94da548ce?w=800&q=80"
-  },
-  {
-    id: 3,
     title: "Real-time Chat Engine (Che-Chat)",
     description: "Built a low-latency bidirectional WebSocket messaging platform utilizing Go-Fiber. Designed a Layered Architecture and developed dynamic middleware for real-time profanity filtering. Managed schema tracking via PostgreSQL and Goose.",
     tech: ["Golang", "WebSockets", "Clean Architecture", "PostgreSQL"],
     github: "https://github.com",
     live: "#",
-    image: "https://images.unsplash.com/photo-1614680376593-902f74cf0d41?w=800&q=80"
+    image: "https://images.unsplash.com/photo-1614680376593-902f74cf0d41?w=800&q=80",
+    detailsKey: "real-time-chat-engine"
+  },
+  {
+    id: 3,
+    title: "Go-Fiber SMTP API Gateway",
+    description: "High-performance SMTP API Gateway that enables direct mail delivery to MX relay servers, bypassing traditional MTAs. Implements custom SMTP communication using net/textproto and enmime, with soft‑retry, real‑time monitoring, and optional DKIM signing.",
+    tech: ["Golang", "Go-Fiber", "net/textproto", "enmime", "Docker", "DKIM"],
+    github: "https://github.com",
+    live: "#",
+    image: "https://images.unsplash.com/photo-1551808525-51a94da548ce?w=800&q=80",
+    detailsKey: "go-fiber-smtp-api-gateway"
   },
   {
     id: 4,
-    title: "Secure Domain Authentication Engine",
-    description: "Engineered a Go automation pipeline for DKIM key generation, secure storage, and real-time DNS provisioning via the Linode API, thereby optimizing domain authentication workflows and increasing deliverability.",
-    tech: ["Golang", "DNS", "Security", "Linux"],
+    title: "Farmer’s Friend (E-Commerce)",
+    description: "Full‑stack PHP/MySQL e‑commerce platform for agricultural trade, featuring Google Maps location pinning and OTP‑based SMS authentication for secure seller‑buyer communication.",
+    tech: ["PHP", "MySQL", "Google Maps API", "SMS OTP Gateway", "Docker", "Bootstrap"],
     github: "https://github.com",
     live: "#",
-    image: "https://images.unsplash.com/photo-1518770660439-4636190af475?w=800&q=80"
+    image: "https://images.unsplash.com/photo-1496171367470-9ed9a91ea931?w=800&q=80",
+    detailsKey: "farmer-friend-ecommerce"
   }
 ];
