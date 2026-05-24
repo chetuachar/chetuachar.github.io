@@ -1,9 +1,9 @@
-export const blog4 = {
-  id: 4,
+export const blog3 = {
+  id: 3,
   slug: "sending-email-using-smtp-telnet-port-25",
   title: "How to Send an SMTP Email Manually Using Telnet on Port 25",
   excerpt: "Learn how SMTP communication works internally by manually sending an email over Telnet using SMTP commands on port 25.",
-  date: "2026-05-16",
+  date: "2022-05-20",
   tags: ["SMTP", "Telnet", "Postfix", "Mail Server"],
   image: "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=800&q=80",
   content: `

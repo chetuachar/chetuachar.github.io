@@ -26,7 +26,7 @@ export const projects = [
     tech: ["Golang", "Go-Fiber", "net/textproto", "enmime", "Docker", "DKIM"],
     github: "https://github.com",
     live: "#",
-    image: "https://images.unsplash.com/photo-1551808525-51a94da548ce?w=800&q=80",
+    image: "https://plus.unsplash.com/premium_photo-1733306493254-52b143296396?w=800&q=80",
     detailsKey: "go-fiber-smtp-api-gateway"
   },
   {

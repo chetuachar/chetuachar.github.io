@@ -1,14 +1,14 @@
-export const blog6 = {
-    id: 6,
-    slug: "essential-docker-commands-and-docker-compose-guide",
-    title: "Essential Docker Commands, Networking, Volumes, and Docker Compose Guide",
-    excerpt:
-        "A practical guide covering Docker commands, Docker Compose, networking, volumes, container management, iptables troubleshooting, and real-world Linux server workflows.",
-    date: "2026-05-16",
-    tags: ["Docker", "DevOps", "Linux", "Docker Compose"],
-    image:
-        "https://images.unsplash.com/photo-1605745341112-85968b19335b?w=800&q=80",
-    content: `
+export const blog5 = {
+  id: 5,
+  slug: "essential-docker-commands-and-docker-compose-guide",
+  title: "Essential Docker Commands, Networking, Volumes, and Docker Compose Guide",
+  excerpt:
+    "A practical guide covering Docker commands, Docker Compose, networking, volumes, container management, iptables troubleshooting, and real-world Linux server workflows.",
+  date: "2022-06-25",
+  tags: ["Docker", "DevOps", "Linux", "Docker Compose"],
+  image:
+    "https://images.unsplash.com/photo-1605745341112-85968b19335b?w=800&q=80",
+  content: `
 # Docker Essentials for Linux Servers
 
 Docker has become one of the most important tools in modern backend infrastructure and DevOps workflows.

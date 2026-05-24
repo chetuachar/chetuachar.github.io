@@ -10,7 +10,7 @@ const ITEMS_PER_PAGE = 10;
 
 const Blog = () => {
   const [currentPage, setCurrentPage] = useState(1);
-  
+
   // Pagination logic
   const totalItems = blogs.length;
   const totalPages = Math.ceil(totalItems / ITEMS_PER_PAGE);
@@ -32,7 +32,7 @@ const Blog = () => {
 
       <div className="blogs-grid">
         {currentBlogs.map((blog, index) => (
-          <motion.article 
+          <motion.article
             key={blog.id}
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -46,7 +46,7 @@ const Blog = () => {
                 <span>{new Date(blog.date).toLocaleDateString('en-US', { month: 'short', year: 'numeric' })}</span>
               </div>
             </div>
-            
+
             <div className="blog-content">
               <div className="blog-tags">
                 {blog.tags.slice(0, 2).map(tag => (
@@ -56,13 +56,13 @@ const Blog = () => {
                   </span>
                 ))}
               </div>
-              
+
               <Link to={`/blog/${blog.slug}`}>
                 <h2 className="blog-title">{blog.title}</h2>
               </Link>
-              
+
               <p className="blog-excerpt">{blog.excerpt}</p>
-              
+
               <Link to={`/blog/${blog.slug}`} className="read-more-btn">
                 Read Article <ArrowRight size={16} />
               </Link>
@@ -73,14 +73,14 @@ const Blog = () => {
 
       {totalPages > 1 && (
         <div className="pagination">
-          <button 
+          <button
             onClick={() => handlePageChange(currentPage - 1)}
             disabled={currentPage === 1}
             className="pagination-btn"
           >
             <ChevronLeft size={20} />
           </button>
-          
+
           <div className="pagination-numbers">
             {[...Array(totalPages)].map((_, i) => (
               <button
@@ -93,7 +93,7 @@ const Blog = () => {
             ))}
           </div>
 
-          <button 
+          <button
             onClick={() => handlePageChange(currentPage + 1)}
             disabled={currentPage === totalPages}
             className="pagination-btn"

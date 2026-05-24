@@ -1,11 +1,11 @@
-export const blog3 = {
-  id: 3,
+export const blog1 = {
+  id: 1,
   slug: "github-ssh-key-setup-guide",
   title: "How to Create and Configure a GitHub SSH Key for Secure Git Clone Access",
   excerpt: "A complete beginner-to-advanced walkthrough for generating SSH keys, configuring GitHub authentication, and securely cloning repositories from local or cloud servers.",
-  date: "2026-05-16",
+  date: "2020-12-01",
   tags: ["GitHub", "SSH", "Git", "DevOps"],
-  image: "https://images.unsplash.com/photo-1555949963-aa79dcee981c?w=800&q=80",
+  image: "https://images.unsplash.com/photo-1618401471353-b98afee0b2eb?w=800&q=80",
   content: `
 # Setting Up GitHub SSH Authentication
 

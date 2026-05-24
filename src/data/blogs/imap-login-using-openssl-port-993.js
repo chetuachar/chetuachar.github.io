@@ -1,9 +1,9 @@
-export const blog5 = {
-    id: 5,
+export const blog4 = {
+    id: 4,
     slug: "imap-login-using-openssl-port-993",
     title: "How to Test IMAP Login Using OpenSSL on Port 993",
     excerpt: "Learn how to connect to an IMAP server securely using OpenSSL, authenticate manually, list mailboxes, and fetch email headers directly from the terminal.",
-    date: "2026-05-16",
+    date: "2022-06-15",
     tags: ["IMAP", "OpenSSL", "Mail Server", "Email"],
     image: "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=800&q=80",
     content: `
