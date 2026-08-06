@@ -8,13 +8,17 @@ import goFiberSmtpDetails from '../data/go-fiber-smtp-api-gateway.json';
 import imapDetails from '../data/imap-api-gateway.json';
 import chatEngineDetails from '../data/real-time-chat-engine.json';
 import farmerFriendDetails from '../data/farmer-friend-ecommerce.json';
+import rabbitmqConsumerDetails from '../data/rabbitmq-consumer-template.json';
+import ginApiDetails from '../data/gin-api-template.json';
 import './Projects.css';
 
 const detailsMap = {
   'imap-api-gateway': imapDetails,
   'go-fiber-smtp-api-gateway': goFiberSmtpDetails,
   'real-time-chat-engine': chatEngineDetails,
-  'farmer-friend-ecommerce': farmerFriendDetails
+  'farmer-friend-ecommerce': farmerFriendDetails,
+  'rabbitmq-consumer-template': rabbitmqConsumerDetails,
+  'gin-api-template': ginApiDetails
 };
 
 const Projects = () => {

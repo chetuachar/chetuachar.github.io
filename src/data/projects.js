@@ -38,5 +38,25 @@ export const projects = [
     live: "#",
     image: "https://images.unsplash.com/photo-1496171367470-9ed9a91ea931?w=800&q=80",
     detailsKey: "farmer-friend-ecommerce"
+  },
+  {
+    id: 5,
+    title: "RabbitMQ Consumer Template",
+    description: "A minimal, production-shaped Go GitHub template for consuming RabbitMQ messages, with graceful shutdown, automatic reconnect, structured JSON logging, and Docker/CI wired in out of the box.",
+    tech: ["Go", "RabbitMQ", "wagslane/go-rabbitmq", "zerolog", "Docker", "GitHub Actions"],
+    github: "https://github.com/chetuachar/RabbitMQ-Consumer-Template",
+    live: "#",
+    image: "https://images.unsplash.com/photo-1518770660439-4636190af475?w=800&q=80",
+    detailsKey: "rabbitmq-consumer-template"
+  },
+  {
+    id: 6,
+    title: "Gin API Template",
+    description: "A lightweight RESTful API boilerplate built with Go and Gin, featuring easy routing, middleware support, structured JSON logging, and configurable request rate limiting.",
+    tech: ["Go", "Gin", "REST API", "Rate Limiting", "JSON Logging"],
+    github: "https://github.com/chetuachar/gin-api-template",
+    live: "#",
+    image: "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=800&q=80",
+    detailsKey: "gin-api-template"
   }
 ];

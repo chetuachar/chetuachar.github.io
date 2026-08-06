@@ -1,0 +1,51 @@
+{
+  "subtitle": "Lightweight Go + Gin REST API Boilerplate",
+  "description": "A simple, lightweight RESTful API boilerplate built with Go and the Gin framework. Serves as a starting point for new web services with built-in middleware, structured logging, and rate limiting already wired up.",
+  "techStack": {
+    "framework": "Gin (Go web framework)",
+    "logging": "JSON logging with rotation (size/age/backups)",
+    "security": "Self API token + Auth-Token header",
+    "rateLimiting": "Configurable request rate limiting"
+  },
+  "architectureHighlights": [
+    { "title": "Boilerplate-first Design", "description": "Ships with routing, middleware, and error handling already scaffolded so new services can start with business logic on day one." },
+    { "title": "Configurable via Environment", "description": "Server port, log rotation, rate limits, and API token are all driven by environment variables." },
+    { "title": "Built-in Log Viewer", "description": "A password-protected /logs endpoint renders recent log output through an HTML template for quick debugging." }
+  ],
+  "endpoints": [
+    {
+      "category": "Core",
+      "routes": [
+        { "method": "GET", "path": "/v1/hi", "description": "Sample authenticated endpoint that responds with a greeting." },
+        { "method": "GET", "path": "/health", "description": "Returns the API's running status." }
+      ]
+    },
+    {
+      "category": "Diagnostics",
+      "security": "Requires ?passwd={password}",
+      "routes": [
+        { "method": "GET", "path": "/logs", "description": "Loads an HTML template displaying recent logging information." }
+      ]
+    }
+  ],
+  "gettingStarted": {
+    "prerequisites": [
+      "Go 1.20+",
+      "Git"
+    ],
+    "setupAndRun": [
+      {
+        "step": "Clone the repository and install dependencies",
+        "command": "git clone git@github.com:chetuachar/gin-api-template.git && cd gin-api-template && go mod tidy"
+      },
+      {
+        "step": "Configure environment variables",
+        "description": "Set SERVER_PORT, SELF_API_TOKEN, LOG_LEVEL, REQ_RATE_LIMIT and related log/rate-limit settings."
+      },
+      {
+        "step": "Run the API server",
+        "command": "go run main.go"
+      }
+    ]
+  }
+}
