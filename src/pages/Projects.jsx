@@ -10,6 +10,7 @@ import chatEngineDetails from '../data/real-time-chat-engine.json';
 import farmerFriendDetails from '../data/farmer-friend-ecommerce.json';
 import rabbitmqConsumerDetails from '../data/rabbitmq-consumer-template.json';
 import ginApiDetails from '../data/gin-api-template.json';
+import rabbitmqWorkerDetails from '../data/rabbitmq-worker-template.json';
 import './Projects.css';
 
 const detailsMap = {
@@ -18,7 +19,8 @@ const detailsMap = {
   'real-time-chat-engine': chatEngineDetails,
   'farmer-friend-ecommerce': farmerFriendDetails,
   'rabbitmq-consumer-template': rabbitmqConsumerDetails,
-  'gin-api-template': ginApiDetails
+  'gin-api-template': ginApiDetails,
+  'rabbitmq-worker-template': rabbitmqWorkerDetails
 };
 
 const Projects = () => {

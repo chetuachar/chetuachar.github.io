@@ -1,0 +1,48 @@
+{
+  "subtitle": "Production-Ready Go RabbitMQ Worker Template",
+  "description": "A minimal, production-ready starting point for Go services that consume messages from RabbitMQ queues, process them, and route outcomes to separate success or failure queues.",
+  "techStack": {
+    "language": "Go 1.26",
+    "messaging": "wagslane/go-rabbitmq",
+    "logging": "rs/zerolog + lumberjack (rotation)",
+    "config": "Environment variables / .env",
+    "container": "Multi-stage Dockerfile + docker-compose",
+    "ci": "GitHub Actions (build, vet, fmt, test, docker)"
+  },
+  "architectureHighlights": [
+    { "title": "Success/Failure Routing", "description": "Message consumption with automatic success/failure routing built into the handler, based on the outcome of processing." },
+    { "title": "Graceful Shutdown", "description": "Listens for SIGINT/SIGTERM and lets in-flight deliveries finish before the process exits." },
+    { "title": "Automatic Reconnect", "description": "Connection and retry handling is delegated to wagslane/go-rabbitmq, with a configurable base reconnect delay." },
+    { "title": "Message Tracing", "description": "Unique message_id headers and structured logs make individual deliveries traceable end-to-end." }
+  ],
+  "modularInfrastructure": [
+    { "title": "cmd/worker", "description": "Main package handling wiring, config loading, and OS signal handling." },
+    { "title": "internal/rmq", "description": "Connection setup and the handler responsible for consuming, processing, and routing to success/failure queues." },
+    { "title": "internal/config & internal/model", "description": "Typed env-var configuration and the message types/envelopes to adapt for a real producer." }
+  ],
+  "gettingStarted": {
+    "prerequisites": [
+      "Go 1.26 or higher",
+      "Docker (optional, for local RabbitMQ broker)",
+      "RabbitMQ broker access"
+    ],
+    "setupAndRun": [
+      {
+        "step": "Use this template on GitHub, then rename the module",
+        "command": "go mod edit -module github.com/<you>/<your-repo>"
+      },
+      {
+        "step": "Configure environment",
+        "command": "cp .env.example .env"
+      },
+      {
+        "step": "Run with Docker (spins up RabbitMQ too)",
+        "command": "make docker-up"
+      },
+      {
+        "step": "Or run locally against your own broker",
+        "command": "make run"
+      }
+    ]
+  }
+}

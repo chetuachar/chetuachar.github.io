@@ -58,5 +58,15 @@ export const projects = [
     live: "#",
     image: "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=800&q=80",
     detailsKey: "gin-api-template"
+  },
+  {
+    id: 7,
+    title: "RabbitMQ Worker Template",
+    description: "A minimal, production-ready Go GitHub template for RabbitMQ worker services, with automatic success/failure queue routing, graceful shutdown, structured JSON logging, and Docker/CI wired in out of the box.",
+    tech: ["Go", "RabbitMQ", "wagslane/go-rabbitmq", "zerolog", "Docker", "GitHub Actions"],
+    github: "https://github.com/chetuachar/RabbitMQ-Worker-Template",
+    live: "#",
+    image: "https://images.unsplash.com/photo-1550439062-609e1531270e?w=800&q=80",
+    detailsKey: "rabbitmq-worker-template"
   }
 ];
